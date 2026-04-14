@@ -1,0 +1,47 @@
+┌─────────────┬──────────────────────────────────────────────────────────┐
+│ md5         │ 5ab8268ac02946e8492c745b8656c850                                                   │
+│ sha1        │ e1d4e28281c648d37c3e59f99dd4a99e5710909a                                           │
+│ sha256      │ 90d7db9362184affa7412f6494c9d0489564241b7dac4fb1500655ca2557d35c                   │
+│ analysis    │ static                                                                             │
+│ os          │ windows                                                                            │
+│ format      │ pe                                                                                 │
+│ arch        │ amd64                                                                              │
+│ path        │ /home/josue/Documentos/progra/tarea3/team_sample.exe                               │
+└─────────────┴──────────────────────────────────────────────────────────┘
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ ATT&CK Tactic                                 ┃ ATT&CK Technique                                 ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ EXECUTION                                     │ Shared Modules [T1129]                           │
+└───────────────────────────────────────────────┴────────────────────────────────┘
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ MAEC Category                                                 ┃ MAEC Value                       ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ malware-category                                              │ launcher                         │
+└───────────────────────────────────────────────────────────────┴────────────────┘
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ MBC Objective              ┃ MBC Behavior                                                        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ CRYPTOGRAPHY               │ Generate Pseudo-random Sequence::Use API [C0021.003]                │
+│ DISCOVERY                  │ Analysis Tool Discovery::Process detection [B0013.001]              │
+│                            │ Code Discovery::Enumerate PE Sections [B0046.001]                   │
+│ FILE SYSTEM                │ Read File [C0051]                                                   │
+│                            │ Writes File [C0052]                                                 │
+│ MEMORY                     │ Allocate Memory [C0007]                                             │
+│ PROCESS                    │ Create Process [C0017]                                              │
+│                            │ Terminate Process [C0018]                                           │
+└────────────────────────────┴───────────────────────────────────────────┘
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Capability                                            ┃ Namespace                                ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ reference analysis tools strings                      │ anti-analysis                            │
+│ generate random numbers via RtlGenRandom              │ data-manipulation/prng                   │
+│ contain a thread local storage (.tls) section         │ executable/pe/section/tls                │
+│ read file on Windows (4 matches)                      │ host-interaction/file-system/read        │
+│ write file on Windows (4 matches)                     │ host-interaction/file-system/write       │
+│ get thread local storage value                        │ host-interaction/process                 │
+│ create process on Windows                             │ host-interaction/process/create          │
+│ allocate or change RWX memory                         │ host-interaction/process/inject          │
+│ terminate process                                     │ host-interaction/process/terminate       │
+│ enumerate PE sections (4 matches)                     │ load-code/pe                             │
+│ parse PE header (9 matches)                           │ load-code/pe                             │
+└───────────────────────────────────────────────────────┴───────────────┘
